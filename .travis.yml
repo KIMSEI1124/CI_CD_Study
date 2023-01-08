@@ -1,15 +1,15 @@
-sudo: required # 관리자 권한
+sudo: required
 
-language: generic # 언어
+language: generic
 
 services:
 	- docker
 
-before_install:	# 이미지 생성
+before_install:
 	- echo "start Creating an image with dockerfile"
 	- docker build -t jukim1124/react -f Dockerfile.dev .
 
-script:	# 컨테이너 실행, 테스트를 실행하는 부분
+script:
 	- docker run -e CI=true jukim1124/react npm run test -- --coverage
 
 after_success:
