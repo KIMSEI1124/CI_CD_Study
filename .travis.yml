@@ -3,14 +3,11 @@ sudo: required
 language: generic
 
 services:
-	- docker
+  - docker
 
 before_install:
-	- echo "start Creating an image with dockerfile"
-	- docker build -t jukim1124/react -f Dockerfile.dev .
+  - echo "start Creating an image with dockerfile"
+  - docker build -t jukim1124/docker-react-app -f Dockerfile.dev .
 
-script:
-	- docker run -e CI=true jukim1124/react npm run test -- --coverage
-
-after_success:
-	- echo "Test Success"
+script: 
+  - docker run -e CI=true jukim1124/docker-react-app npm run test -- --coverage
