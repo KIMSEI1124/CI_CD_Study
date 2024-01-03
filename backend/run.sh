@@ -4,7 +4,7 @@
 APP_NAME=app
 IMAGE=ci_cd_image
 
-./gradlew clean build
+# ./gradlew clean build
 
 # Application Stop
 echo "🚫 Stop Docker Container"
