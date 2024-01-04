@@ -7,7 +7,7 @@ IMAGE=ci_cd_image
 # ./gradlew clean build
 
 # Application Stop
-echo "🚫 Stop Docker Container"
+echo -n "🚫 Stop Docker Container : "
 docker rm -f $APP_NAME
 
 # Docker 기존 이미지 삭제 및 생성
@@ -16,7 +16,7 @@ docker image rm $IMAGE
 docker build . -t $IMAGE
 
 # Docker Run
-echo "🚀 Docker $APP_NAME Container Start!"
+echo -n "🚀 Docker $APP_NAME Container Start! : "
 docker run -d \
 --name $APP_NAME \
 -p 8080:8080 \
