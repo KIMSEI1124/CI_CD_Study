@@ -1,14 +1,3 @@
-#FROM openjdk:17 AS Builder
-#
-#COPY gradlew .
-#COPY gradle gradle
-#COPY build.gradle .
-#COPY settings.gradle .
-#COPY src src
-#
-#RUN chmod +x ./gradlew
-#RUN ./gradlew clean build
-
 FROM openjdk:17
 
 ARG JAR_FILE=build/libs/*.jar
